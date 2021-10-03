@@ -3,6 +3,7 @@ package edu.kea.carapi.controllers;
 import edu.kea.carapi.exceptions.CarNotFoundException;
 import edu.kea.carapi.models.Car;
 import edu.kea.carapi.repositories.CarRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,11 +13,8 @@ import java.util.List;
  */
 @RestController
 public class CarController {
-    private final CarRepository repository;
-
-    CarController(CarRepository repository) {
-        this.repository = repository;
-    }
+    @Autowired
+    CarRepository repository;
 
     @GetMapping("/cars")
     List<Car> all() {
