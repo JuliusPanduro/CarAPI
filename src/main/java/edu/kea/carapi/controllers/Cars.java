@@ -3,6 +3,7 @@ package edu.kea.carapi.controllers;
 import edu.kea.carapi.exceptions.CarNotFoundException;
 import edu.kea.carapi.models.Car;
 import edu.kea.carapi.repositories.CarRepository;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,7 @@ import java.util.List;
 /**
  * @author Julius Panduro
  */
+@Api(value = "Cars Controller",description = "REST endpoints for cars")
 @RestController
 public class Cars {
     @Autowired
